@@ -12,7 +12,6 @@ class ResourceModel implements ResourceModelInterface {
     private $table;
     private $id;
     private $model;
-    private $myID;
 
     public function _init($table, $id, $model)
     {
