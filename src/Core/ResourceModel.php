@@ -36,8 +36,6 @@ class ResourceModel implements ResourceModelInterface {
         }
         $stringModel = rtrim($stringModel, ', ');
 
-        echo $stringModel."<br>";
-
         if ($id != null) {
             $sql_insert = "UPDATE {$this->table} SET {$stringModel} where {$this->id} = $id";
         }
@@ -54,9 +52,7 @@ class ResourceModel implements ResourceModelInterface {
     {
         $arrayModel = $model->getProperties();
         $id = $arrayModel[$this->id];
-        echo $id;
         $sql = "DELETE FROM {$this->table} where {$this->id} = {$id}";
-        echo $sql;
         $req = Database::getBdd()->prepare($sql);
         return $req->execute();
     }
